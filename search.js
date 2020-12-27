@@ -1,4 +1,5 @@
-var dog = "dog";
+
+
 class Field {
             constructor(id, name, text) {
                 this.id = id,
@@ -7,24 +8,23 @@ class Field {
             }
         }
         class InstantSearch {
-            constructor(
+            constructor({
             containerSelector = "#result",
             searchInputSelector= "#find",
             searchItemSelector = ".search-item",
             fieldSelector = ".field",
             resultCount = 10,
-            highlightColor = "#ffeb3b"                
-            ){
+            highlightColor = "#ffeb3b" ,
+            disableStyle = false
+            }){
              this.searchInputSelector=searchInputSelector,
              this.containerSelector = containerSelector,
              this.searchItemSelector = searchItemSelector,
              this.fieldSelector = fieldSelector,
              this.resultCount = resultCount,
              this.highlightColor = highlightColor,
+             this.disableStyle = disableStyle,
                  this._searchData = []
-            console.log('begin')
-            console.log(searchInputSelector)
-            console.log('end')
                 if (this.ValidElements()){
                     this.Init()
                 }
@@ -34,18 +34,28 @@ class Field {
                 if(typeof this.containerSelector != 'string' ||
                  typeof this.searchInputSelector != "string" ||
                  typeof this.searchItemSelector != "string" ||
-                 typeof this.fieldSelector != "string")
-                 console.log('invalid type')
+                 typeof this.fieldSelector != "string") {
+                 console.log('Param passed is not a vlaid css selector')
+                 return false;
+                 }
+                 let messages = [];
                 if (document.querySelector(this.containerSelector) == null)
-                    console.error('Instant Search: invalid selector ' + this.containerSelector)
+                    messages.push('Instant Search: invalid selector for container element ' + this.containerSelector);
+                if (document.querySelector(this.searchInputSelector) == null)
+                    messages.push('Instant Search: invalid selector ' + this.searchItemSelector)
+                if (document.querySelector(this.searchItemSelector) == null)
+                    messages.push('Instant Search: invalid selector ' + this.searchItemSelector)
+                if(document.querySelector('[data-id]') == null)
+                messages.push('search item element must have "data-id" attribute')
+               
+                if(messages.length > 0){
+                    messages.forEach(e=>{console.log(e)})
+                }
+                return messages.length < 1
 
-                if (document.querySelector(this.searchInputSelector) == null)
-                    console.error('Instant Search: invalid selector ' + this.searchItemSelector)
-                if (document.querySelector(this.searchInputSelector) == null)
-                    console.error('Instant Search: invalid selector ' + this.searchInputSelector)
-                return true;
 
             }
+
             FormMark(e) {
                 return `<span class="mark">${e}</span>`
             }
@@ -65,8 +75,12 @@ class Field {
 
             }
             _SetStyle() {
+                document.querySelector(this.searchInputSelector).place
                 var style = document.createElement('style');
                 style.type = 'text/css';
+                if(!this.disableStyle){
+
+                
                 style.innerHTML += `
                 ${this.searchInputSelector} {
                     width: 80%;
@@ -76,9 +90,24 @@ class Field {
                     border: 1px solid #d6d4d4;
                     font-size: 1.1em;
                     margin: 10px; 
+                    display:block;
+                    margin:auto;
                     background: #e6eaed; 
                 } `;
+            style.innerHTML += 
+            `${this.searchItemSelector}{
+                padding: 10px;
+                background-color: white;
+                margin: 10px;
+                box-shadow: 3px 5px 7px -8px grey;
+            }`;
 
+            style.innerHTML += 
+            `${this.containerSelector}{
+                background-color: #fafbfd;
+                padding: 10px;
+            }`;
+        }
                 style.innerHTML += `.mark{ background-color:${this.highlightColor} !important; }`;
                 document.getElementsByTagName('head')[0].appendChild(style);
             }
@@ -86,17 +115,17 @@ class Field {
                 var self = this;
                 Array.from(document.getElementsByClassName('mark')).forEach(e => e.classList.remove('mark'));
                 let regExp = new RegExp(keyword, 'ig');
-                let totalResult = self._searchData.filter(e => e.value.match(regExp)?.length > 0);
+                let totalResult = self._searchData.filter(e => e.value.match(regExp)!= null?e.value.match(regExp).length > 0:false);
                 if (!totalResult)
                     return false;
-                console.log(totalResult)
+               
 
                 let result = totalResult.splice(0, self.resultCount);
 
                 result.forEach(e => {
                     setTimeout(() => {
                         let element = document.querySelector(`*[data-id="${e.id}"]`);
-                        let elemenText = element.textContent.match(regExp)?.[0];
+                        let elemenText = element.textContent.match(regExp)[0];
                         if (elemenText == undefined || elemenText == null)
                             return false;
                         // element.innerHTML = element.innerText.replaceAll(regExp, self.FormMark( matchText));

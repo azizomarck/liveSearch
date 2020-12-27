@@ -14,6 +14,7 @@
 
         #result .search-item {
             padding: 10px;
+            background-color: white;
             margin: 10px;
             box-shadow: 3px 5px 7px -8px grey;
         }
@@ -60,14 +61,14 @@
             }
         }
         class InstantSearch {
-            constructor(
+            constructor({
             containerSelector = "#result",
             searchInputSelector= "#find",
             searchItemSelector = ".search-item",
             fieldSelector = ".field",
             resultCount = 10,
-            highlightColor = "#ffeb3b"                
-            ){
+            highlightColor = "#ffeb3b"     
+            }){
              this.searchInputSelector=searchInputSelector,
              this.containerSelector = containerSelector,
              this.searchItemSelector = searchItemSelector,
@@ -807,7 +808,7 @@
             resultCount : 10,
             highlightColor : "#ffeb3b"
                  }
-       let instantSearch = new InstantSearch();
+       let instantSearch = new InstantSearch(param);
 
     </script>
     <script>
