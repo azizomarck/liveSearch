@@ -16,9 +16,10 @@ If your device browser could render the large data, Instant search will work fin
 
 ### How to use Instant Search ? 
 
+Instant search is just a javascript class. It takes a **object** as parameter. 
 
-
-
+For a quick start use this example. http://github.com - automatic!
+[GitHub](http://github.com)
 
  <table>
    <tr>
