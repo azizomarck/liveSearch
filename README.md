@@ -25,14 +25,31 @@ Instant search is just a javascript class. It takes an **object** as parameter.
 For a quick start use this example. http://github.com - automatic!
 [GitHub](http://github.com)
 ```html 
-<h1>hh</h1>
+<script src="./search.js"> </script>
+
+<body>
+
+  <input id="find">
+  <div id="employeesList">
+    <section class="search-item" data-id="9021">
+      <div class="field"> John Smoith</div>
+      <div><a>link to John profile</a></div>
+      <div class="field"> Accounting Department</div>
+    </section>
+    <section class="search-item" data-id="9321">
+      <div class="field">Oscar Wilde</div>
+      <div><a>link to Oscar profile</a></div>
+      <div class="field">Marketing Department
+
+      </div>
+  </div>
+  </div>
+</body>
+
 <script>
- let param = {
-            containerSelector : "#yourselecotr",
-            searchInputSelector: "#yoursearchipnut",
-            //... other parameters
-                 }
-let instantSearch = new InstantSearch(param);
+  let test = new InstantSearch({
+    containerSelector: "#employeesList"
+  })
 </script>
 
 ``` 
