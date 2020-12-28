@@ -47,7 +47,7 @@ For a quick start use this example. http://github.com - automatic!
 </body>
 
 <script>
-  let test = new InstantSearch({
+  let instantSearch = new InstantSearch({
     containerSelector: "#employeesList"
   })
 </script>
