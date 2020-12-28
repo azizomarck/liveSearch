@@ -7,7 +7,7 @@ It searches through hundreds of elements in less than 0.5s without freezing the 
 
 Lorem ipsum dolor sit amet.
 
-[button url="http://www.google.com"]
+{% include button.html url="http://www.google.com" %}
 
 
 #### When to use instant search ? 
