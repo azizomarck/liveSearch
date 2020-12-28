@@ -26,6 +26,14 @@ For a quick start use this example. http://github.com - automatic!
 [GitHub](http://github.com)
 ```html 
 <h1>hh</h1>
+<script>
+ let param = {
+            containerSelector : "#yourselecotr",
+            searchInputSelector: "#yoursearchipnut",
+            //... other parameters
+                 }
+let instantSearch = new InstantSearch(param);
+</script>
 
 ``` 
 ```javascript
