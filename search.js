@@ -79,8 +79,6 @@ class Field {
                 var style = document.createElement('style');
                 style.type = 'text/css';
                 if(!this.disableStyle){
-
-                
                 style.innerHTML += `
                 ${this.searchInputSelector} {
                     width: 80%;
