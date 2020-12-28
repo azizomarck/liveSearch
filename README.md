@@ -4,7 +4,11 @@
 
 Instant search provides Search & Re-order as you type function using only plain javascript with keeping user interface functional.  
 It searches through hundreds of elements in less than 0.5s without freezing the browser and it moves the top matching elemetns to the top with the matching text highlighted.
-<button name="button" onclick="http://www.google.com">Click me HERE </button>
+
+Lorem ipsum dolor sit amet.
+
+[button url="http://www.google.com"]
+
 
 #### When to use instant search ? 
  Need a very fast searching function
