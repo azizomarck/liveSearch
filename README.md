@@ -53,14 +53,7 @@ For a quick start use this example. http://github.com - automatic!
 </script>
 
 ``` 
-```javascript
- let param = {
-            containerSelector : "#yourselecotr",
-            searchInputSelector: "#yoursearchipnut",
-            //... other parameters
-                 }
-let instantSearch = new InstantSearch(param);
-```
+
 Parameters Doc:
 
  <table>
