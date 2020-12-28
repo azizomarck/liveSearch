@@ -24,6 +24,42 @@ Instant search is just a javascript class. It takes an **object** as parameter.
 
 
 
+```html
+	<script src="./search.js"></script>
+	<body>
+		<input id="find">
+			<!-- container -->
+			<div id="employeesList">
+				<!--record-->
+				<!--data-id is required and must be unique-->
+				<section class="search-item" data-id="9021">
+					<div class="field"> John Smoith</div>
+					<div>
+						<a>link to John profile</a>
+					</div>
+					<div class="field"> Accounting Department</div>
+				</section>
+				<!--record-->
+				<!--data-id is required and must be unique-->
+				<section class="search-item" data-id="9321">
+					<div class="field">Oscar Wilde</div>
+					<div>
+						<a>link to Oscar profile</a>
+					</div>
+					<div class="field">Marketing Department </div>
+				</section>
+			</div>
+		</body>
+		<script>
+  let instanceSearch = new InstantSearch({
+    containerSelector: "#employeesList"
+  })
+</script>
+```
+
+
+
+
 
  <table>
    <tr>
@@ -75,40 +111,4 @@ Instant search is just a javascript class. It takes an **object** as parameter.
       <td><code>false</code></td>
    </tr>
 </table>
-
-
-```html
-	<script src="./search.js"></script>
-	<body>
-		<input id="find">
-			<!-- container -->
-			<div id="employeesList">
-				<!--record-->
-				<!--data-id is required and must be unique-->
-				<section class="search-item" data-id="9021">
-					<div class="field"> John Smoith</div>
-					<div>
-						<a>link to John profile</a>
-					</div>
-					<div class="field"> Accounting Department</div>
-				</section>
-				<!--record-->
-				<!--data-id is required and must be unique-->
-				<section class="search-item" data-id="9321">
-					<div class="field">Oscar Wilde</div>
-					<div>
-						<a>link to Oscar profile</a>
-					</div>
-					<div class="field">Marketing Department </div>
-				</section>
-			</div>
-		</body>
-		<script>
-  let instanceSearch = new InstantSearch({
-    containerSelector: "#employeesList"
-  })
-</script>
-```
-
-
 
