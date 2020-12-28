@@ -20,7 +20,7 @@ If your device browser could render the large data, Instant search will work fin
 
 ### How to use Instant Search ? 
 
-Instant search is just a javascript class. It takes an **object** as parameter. Parameters are optional if required classes exist in DOM. 
+Instant search is just a javascript class. It takes an **object** as parameter. Parameters are optional if required classes exist in DOM. Each record must have an data-id attribute with a unique value
 
 
 
