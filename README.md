@@ -5,9 +5,9 @@
 Instant search provides Search & Re-order as you type function using only plain javascript with keeping user interface functional.  
 It searches through hundreds of elements in less than 0.5s without freezing the browser and it moves the top matching elemetns to the top with the matching text highlighted.
 
-Lorem ipsum dolor sit amet.
+[DEMO](http://github.com)
 
-{% include button.html url="http://www.google.com" %}
+
 
 
 #### When to use instant search ? 
