@@ -21,8 +21,9 @@ If your device browser could render the large data, Instant search will work fin
 ### How to use Instant Search ? 
 
 Instant search is just a javascript class. It takes an **object** as parameter. Parameters are optional if required classes exist in DOM. Each record must have  **data-id** attribute with a unique value <br /> 
-<a href="https://azizomarck.github.io/liveSearch/example/example.html" target="_blank">Simple Example - Quick Start</a> <br />
-<a href="https://azizomarck.github.io/liveSearch/demo/demo.html" target="_blank">Example - Dynamic data</a>
+
+<a href="https://azizomarck.github.io/liveSearch/demo/demo.html" target="_blank">Example - Dynamic data</a><br />
+<a href="https://azizomarck.github.io/liveSearch/example/example.html" target="_blank">Simple Example - Quick Start</a> 
 ```html
 	<script src="./search.js"></script>
 	<body>
