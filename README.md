@@ -3,7 +3,7 @@
 ### What is instant serach ? 
 
 Instant search provides Search & Re-order as you type function using only plain javascript with keeping user interface functional.  
-It searches through hundreds of elements in less than 0.5s without freezing the browser and it moves the top matching elemetns to the top with the matching text highlighted.
+It searches through hundreds of elements in less than 0.5s without freezing the browser and it places the top matching elemetns to the top with the keyword  highlighted.
 
 
 
